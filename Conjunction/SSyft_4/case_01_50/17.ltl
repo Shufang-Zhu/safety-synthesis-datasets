@@ -1,0 +1,1 @@
+!(F!(p1_request0 | X!p1_grant0) | F!(p1_request1 | X!p1_grant1) | F!(X!p1_grant0 | X!p1_grant1) | F!(Xp1_grant0 | X(Xp1_grant0 | X(Xp1_grant0 | XXp1_grant0))) | F!(Xp1_grant1 | X(Xp1_grant1 | X(Xp1_grant1 | XXp1_grant1))))

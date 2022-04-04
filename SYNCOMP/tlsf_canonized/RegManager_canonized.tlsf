@@ -1,0 +1,27 @@
+INFO {
+TITLE :          "Converted TSL Specification: RegManager"
+DESCRIPTION :    "TSL specification, which has been converted to TLSF."
+SEMANTICS :      Mealy
+TARGET :         Mealy
+
+}
+MAIN {
+	INPUTS {
+		p0p0secondhalf0reg2manager2cmd;
+		p0p0firsthalf0reg2manager2cmd;
+	}
+	OUTPUTS {
+		u0reg2type0f1dextract2reg0reg2manager2cmd1b;
+		u0reg2type0f1dregnone1b;
+		u0reg2type0reg2type;
+		u0reg2data0f1dmerge2reg0f1dextract2dat0reg2manager2cmd1b0buffer1b;
+		u0reg2data0f1dzero1b;
+		u0reg2data0reg2data;
+		u0buffer0f1dextract2dat0reg2manager2cmd1b;
+		u0buffer0buffer;
+	}
+	GUARANTEE {
+		 G ((((((((((u0buffer0buffer && !u0buffer0f1dextract2dat0reg2manager2cmd1b) && (!u0buffer0f1dextract2dat0reg2manager2cmd1b || u0buffer0buffer)) || ((u0buffer0f1dextract2dat0reg2manager2cmd1b && !u0buffer0buffer) && (!u0buffer0buffer || u0buffer0f1dextract2dat0reg2manager2cmd1b))) && (((u0reg2data0f1dzero1b && (!u0reg2data0f1dmerge2reg0f1dextract2dat0reg2manager2cmd1b0buffer1b && !u0reg2data0reg2data)) && ((((!u0reg2data0f1dmerge2reg0f1dextract2dat0reg2manager2cmd1b0buffer1b || u0reg2data0reg2data) || (u0reg2data0reg2data && !u0reg2data0f1dmerge2reg0f1dextract2dat0reg2manager2cmd1b0buffer1b)) && ((!u0reg2data0reg2data || u0reg2data0f1dmerge2reg0f1dextract2dat0reg2manager2cmd1b0buffer1b) || (u0reg2data0f1dmerge2reg0f1dextract2dat0reg2manager2cmd1b0buffer1b && !u0reg2data0reg2data))) || u0reg2data0f1dzero1b)) || (((((u0reg2data0f1dmerge2reg0f1dextract2dat0reg2manager2cmd1b0buffer1b && !u0reg2data0reg2data) && (!u0reg2data0reg2data || u0reg2data0f1dmerge2reg0f1dextract2dat0reg2manager2cmd1b0buffer1b)) || ((u0reg2data0reg2data && !u0reg2data0f1dmerge2reg0f1dextract2dat0reg2manager2cmd1b0buffer1b) && (!u0reg2data0f1dmerge2reg0f1dextract2dat0reg2manager2cmd1b0buffer1b || u0reg2data0reg2data))) && !u0reg2data0f1dzero1b) && (!u0reg2data0f1dzero1b || (u0reg2data0f1dmerge2reg0f1dextract2dat0reg2manager2cmd1b0buffer1b || u0reg2data0reg2data))))) && (((u0reg2type0f1dregnone1b && (!u0reg2type0f1dextract2reg0reg2manager2cmd1b && !u0reg2type0reg2type)) && ((((!u0reg2type0f1dextract2reg0reg2manager2cmd1b || u0reg2type0reg2type) || (u0reg2type0reg2type && !u0reg2type0f1dextract2reg0reg2manager2cmd1b)) && ((!u0reg2type0reg2type || u0reg2type0f1dextract2reg0reg2manager2cmd1b) || (u0reg2type0f1dextract2reg0reg2manager2cmd1b && !u0reg2type0reg2type))) || u0reg2type0f1dregnone1b)) || (((((u0reg2type0f1dextract2reg0reg2manager2cmd1b && !u0reg2type0reg2type) && (!u0reg2type0reg2type || u0reg2type0f1dextract2reg0reg2manager2cmd1b)) || ((u0reg2type0reg2type && !u0reg2type0f1dextract2reg0reg2manager2cmd1b) && (!u0reg2type0f1dextract2reg0reg2manager2cmd1b || u0reg2type0reg2type))) && !u0reg2type0f1dregnone1b) && (!u0reg2type0f1dregnone1b || (u0reg2type0f1dextract2reg0reg2manager2cmd1b || u0reg2type0reg2type))))) && ((!p0p0firsthalf0reg2manager2cmd || u0buffer0f1dextract2dat0reg2manager2cmd1b) && (!u0buffer0f1dextract2dat0reg2manager2cmd1b || p0p0firsthalf0reg2manager2cmd))) && (!p0p0secondhalf0reg2manager2cmd || u0reg2type0f1dextract2reg0reg2manager2cmd1b)) && (p0p0secondhalf0reg2manager2cmd || u0reg2type0f1dregnone1b)) && (!p0p0secondhalf0reg2manager2cmd || u0reg2data0f1dmerge2reg0f1dextract2dat0reg2manager2cmd1b0buffer1b)) && (p0p0secondhalf0reg2manager2cmd || u0reg2data0f1dzero1b))
+
+	}
+}

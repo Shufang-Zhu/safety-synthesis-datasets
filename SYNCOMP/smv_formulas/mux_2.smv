@@ -1,0 +1,2 @@
+ G ((TRUE & ! in_1 & ! in_0 -> out <-> in_0) & (TRUE & ! in_1 & in_0 -> out <-> in_1))
+

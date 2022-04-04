@@ -1,0 +1,2 @@
+ G (! (UTERMcountcount & ! UTERMcountincrementdcountb <-> UTERMcountincrementdcountb & ! UTERMcountcount)) & G (PTERMeventdclickb <-> UTERMcountincrementdcountb)
+

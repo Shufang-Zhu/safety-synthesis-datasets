@@ -1,0 +1,2 @@
+ G (! (UTERMcountcount & ! UTERMcountincrementdcountb <-> UTERMcountincrementdcountb & ! UTERMcountcount) & ! (UTERMpicpic & ! UTERMpicrenderButtondcountb <-> UTERMpicrenderButtondcountb & ! UTERMpicpic)) & G (PTERMeventdclickb <-> UTERMcountincrementdcountb) & G UTERMpicrenderButtondcountb
+

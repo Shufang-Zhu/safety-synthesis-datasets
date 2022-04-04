@@ -1,0 +1,25 @@
+INFO {
+TITLE :          "Shift"
+DESCRIPTION :    "Shifts the input by one position to the output"
+SEMANTICS :      Mealy
+TARGET :         Mealy
+
+}
+MAIN {
+	INPUTS {
+		in_0;
+		in_1;
+		in_2;
+		in_3;
+	}
+	OUTPUTS {
+		out_0;
+		out_1;
+		out_2;
+		out_3;
+	}
+	GUARANTEE {
+		 G (((((!in_0 || out_1) && (!out_1 || in_0)) && ((!in_1 || out_2) && (!out_2 || in_1))) && ((!in_2 || out_3) && (!out_3 || in_2))) && ((!in_3 || out_0) && (!out_0 || in_3)))
+
+	}
+}

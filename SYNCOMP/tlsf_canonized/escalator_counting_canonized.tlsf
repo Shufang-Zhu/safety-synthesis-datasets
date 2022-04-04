@@ -1,0 +1,26 @@
+INFO {
+TITLE :          "Converted TSL Specification: escalatorcounting"
+DESCRIPTION :    "TSL specification, which has been converted to TLSF."
+SEMANTICS :      Mealy
+TARGET :         Mealy
+
+}
+MAIN {
+	INPUTS {
+		PTERMzerodusersb;
+		PTERMexitEventdtopb;
+		PTERMenterEventdbottomb;
+	}
+	OUTPUTS {
+		UTERMusersusers;
+		UTERMusersincdusersb;
+		UTERMusersdecdusersb;
+		UTERMstepsstopdb;
+		UTERMstepssteps;
+		UTERMstepsmovedb;
+	}
+	GUARANTEE {
+		((((( G (((UTERMstepssteps && (!UTERMstepsstopdb && !UTERMstepsmovedb)) && ((((!UTERMstepsstopdb || UTERMstepsmovedb) || (UTERMstepsmovedb && !UTERMstepsstopdb)) && ((!UTERMstepsmovedb || UTERMstepsstopdb) || (UTERMstepsstopdb && !UTERMstepsmovedb))) || UTERMstepssteps)) || (((((UTERMstepsstopdb && !UTERMstepsmovedb) && (!UTERMstepsmovedb || UTERMstepsstopdb)) || ((UTERMstepsmovedb && !UTERMstepsstopdb) && (!UTERMstepsstopdb || UTERMstepsmovedb))) && !UTERMstepssteps) && (!UTERMstepssteps || (UTERMstepsstopdb || UTERMstepsmovedb)))) &&  G (((UTERMusersincdusersb && (!UTERMusersusers && !UTERMusersdecdusersb)) && ((((!UTERMusersusers || UTERMusersdecdusersb) || (UTERMusersdecdusersb && !UTERMusersusers)) && ((!UTERMusersdecdusersb || UTERMusersusers) || (UTERMusersusers && !UTERMusersdecdusersb))) || UTERMusersincdusersb)) || (((((UTERMusersusers && !UTERMusersdecdusersb) && (!UTERMusersdecdusersb || UTERMusersusers)) || ((UTERMusersdecdusersb && !UTERMusersusers) && (!UTERMusersusers || UTERMusersdecdusersb))) && !UTERMusersincdusersb) && (!UTERMusersincdusersb || (UTERMusersusers || UTERMusersdecdusersb))))) && ( G ((!PTERMenterEventdbottomb || PTERMexitEventdtopb) || UTERMusersincdusersb) &&  G (!UTERMusersincdusersb || (PTERMenterEventdbottomb && !PTERMexitEventdtopb)))) && ( G ((!PTERMexitEventdtopb || PTERMenterEventdbottomb) || UTERMusersdecdusersb) &&  G (!UTERMusersdecdusersb || (PTERMexitEventdtopb && !PTERMenterEventdbottomb)))) && ( G ((!PTERMzerodusersb || !PTERMenterEventdbottomb) || UTERMstepsmovedb) &&  G (!UTERMstepsmovedb || (PTERMzerodusersb && PTERMenterEventdbottomb)))) && ( X ( G ((( Y PTERMzerodusersb || !PTERMzerodusersb) || PTERMenterEventdbottomb) || UTERMstepsstopdb)) &&  X ( G (!UTERMstepsstopdb || ((!( Y PTERMzerodusersb) && PTERMzerodusersb) && !PTERMenterEventdbottomb)))))
+
+	}
+}

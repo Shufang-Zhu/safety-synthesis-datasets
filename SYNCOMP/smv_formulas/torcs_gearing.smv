@@ -1,0 +1,2 @@
+ G (! (UTERMgearshiftByRPMdgearrpmb & ! (UTERMgearshiftBySpeeddgearspeedb | UTERMgeargear) <-> ! (UTERMgearshiftBySpeeddgearspeedb & ! UTERMgeargear <-> UTERMgeargear & ! UTERMgearshiftBySpeeddgearspeedb) & ! UTERMgearshiftByRPMdgearrpmb)) & G (! PTERMaccelingdaccelbrakesb -> UTERMgeargear) & G (! PTERMaccelingdaccelbrakesb & X PTERMaccelingdaccelbrakesb -> X UTERMgearshiftBySpeeddgearspeedb) & G (PTERMaccelingdaccelbrakesb & X PTERMaccelingdaccelbrakesb -> X UTERMgearshiftByRPMdgearrpmb)
+

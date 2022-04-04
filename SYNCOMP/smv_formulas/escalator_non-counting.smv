@@ -1,0 +1,2 @@
+ G (! (UTERMstepssteps & ! (UTERMstepsstopdb | UTERMstepsmovedb) <-> ! (UTERMstepsstopdb & ! UTERMstepsmovedb <-> UTERMstepsmovedb & ! UTERMstepsstopdb) & ! UTERMstepssteps)) & G (PTERMenterEventdbottomb & ! PTERMexitEventdtopb <-> UTERMstepsmovedb) & G (PTERMexitEventdtopb & ! PTERMenterEventdbottomb <-> UTERMstepsstopdb)
+

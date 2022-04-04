@@ -1,0 +1,27 @@
+INFO {
+TITLE :          "Converted TSL Specification: escalatorcountinginit"
+DESCRIPTION :    "TSL specification, which has been converted to TLSF."
+SEMANTICS :      Mealy
+TARGET :         Mealy
+
+}
+MAIN {
+	INPUTS {
+		PTERMzerodusersb;
+		PTERMexitEventdtopb;
+		PTERMenterEventdbottomb;
+	}
+	OUTPUTS {
+		UTERMusersusers;
+		UTERMusersresetToZerodb;
+		UTERMusersincdusersb;
+		UTERMusersdecdusersb;
+		UTERMstepsstopdb;
+		UTERMstepssteps;
+		UTERMstepsmovedb;
+	}
+	GUARANTEE {
+		(((((( G ((((UTERMstepssteps && (!UTERMstepsstopdb && !UTERMstepsmovedb)) && ((((!UTERMstepsstopdb || UTERMstepsmovedb) || (UTERMstepsmovedb && !UTERMstepsstopdb)) && ((!UTERMstepsmovedb || UTERMstepsstopdb) || (UTERMstepsstopdb && !UTERMstepsmovedb))) || UTERMstepssteps)) || (((((UTERMstepsstopdb && !UTERMstepsmovedb) && (!UTERMstepsmovedb || UTERMstepsstopdb)) || ((UTERMstepsmovedb && !UTERMstepsstopdb) && (!UTERMstepsstopdb || UTERMstepsmovedb))) && !UTERMstepssteps) && (!UTERMstepssteps || (UTERMstepsstopdb || UTERMstepsmovedb)))) && ((((((UTERMusersresetToZerodb && !UTERMusersdecdusersb) && (!UTERMusersdecdusersb || UTERMusersresetToZerodb)) || ((UTERMusersdecdusersb && !UTERMusersresetToZerodb) && (!UTERMusersresetToZerodb || UTERMusersdecdusersb))) && (!UTERMusersusers && !UTERMusersincdusersb)) && ((((!UTERMusersusers || UTERMusersincdusersb) || (UTERMusersincdusersb && !UTERMusersusers)) && ((!UTERMusersincdusersb || UTERMusersusers) || (UTERMusersusers && !UTERMusersincdusersb))) || (UTERMusersresetToZerodb || UTERMusersdecdusersb))) || (((((UTERMusersusers && !UTERMusersincdusersb) && (!UTERMusersincdusersb || UTERMusersusers)) || ((UTERMusersincdusersb && !UTERMusersusers) && (!UTERMusersusers || UTERMusersincdusersb))) && (!UTERMusersresetToZerodb && !UTERMusersdecdusersb)) && ((((!UTERMusersresetToZerodb || UTERMusersdecdusersb) || (UTERMusersdecdusersb && !UTERMusersresetToZerodb)) && ((!UTERMusersdecdusersb || UTERMusersresetToZerodb) || (UTERMusersresetToZerodb && !UTERMusersdecdusersb))) || (UTERMusersusers || UTERMusersincdusersb))))) && UTERMusersresetToZerodb) &&  X ( G !UTERMusersresetToZerodb)) &&  X ( G (((!PTERMenterEventdbottomb || PTERMexitEventdtopb) || UTERMusersincdusersb) && (!UTERMusersincdusersb || (PTERMenterEventdbottomb && !PTERMexitEventdtopb))))) &&  X ( G (((!PTERMexitEventdtopb || PTERMenterEventdbottomb) || UTERMusersdecdusersb) && (!UTERMusersdecdusersb || (PTERMexitEventdtopb && !PTERMenterEventdbottomb))))) &&  X ( G (((!PTERMzerodusersb || !PTERMenterEventdbottomb) || UTERMstepsmovedb) && (!UTERMstepsmovedb || (PTERMzerodusersb && PTERMenterEventdbottomb))))) && ( X ( X ( G ((( Y PTERMzerodusersb || !PTERMzerodusersb) || PTERMenterEventdbottomb) || UTERMstepsstopdb))) &&  X ( X ( G (!UTERMstepsstopdb || ((!( Y PTERMzerodusersb) && PTERMzerodusersb) && !PTERMenterEventdbottomb))))))
+
+	}
+}

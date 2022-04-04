@@ -1,0 +1,22 @@
+INFO {
+TITLE :          "n-ary mux"
+DESCRIPTION :    "selects the output out of a set of inputs according to a given
+ binary encoded input"
+SEMANTICS :      Mealy
+TARGET :         Mealy
+
+}
+MAIN {
+	INPUTS {
+		in_0;
+		in_1;
+		select_0;
+	}
+	OUTPUTS {
+		out;
+	}
+	GUARANTEE {
+		 G (((in_1 || in_0) || ((!out || in_0) && (!in_0 || out))) && ((in_1 || !in_0) || ((!out || in_1) && (!in_1 || out))))
+
+	}
+}

@@ -1,0 +1,27 @@
+INFO {
+TITLE:       "Scalable Unrealizable Benchmark n.2"
+DESCRIPTION: "Scalable Unrealizable Benchmark n. for Ksy tool."
+SEMANTICS:   Mealy
+TARGET:      Mealy
+}
+MAIN {
+
+INPUTS { 
+u0;
+u1;
+u2;
+
+OUTPUTS{
+c;
+}
+
+GUARANTEE { 
+
+G( c ) && (
+G( u0 ) || 
+G( u0 && u1 ) || 
+G( u0 && u1 && u2) 
+)
+}
+}
+

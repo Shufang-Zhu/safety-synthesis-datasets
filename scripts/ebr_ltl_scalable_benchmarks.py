@@ -22,7 +22,7 @@ def ebr_ltl_scalable(formula_seeds_folder, save):
 
 
 if __name__ == "__main__":
-    # ebr_ltl_scalable("scripts/scalable-benchmarks/real_1_tlsf", "EBR_LTL_scalable")
-    # ebr_ltl_scalable("scripts/scalable-benchmarks/real_2_tlsf", "EBR_LTL_scalable")
-    # ebr_ltl_scalable("scripts/scalable-benchmarks/unreal_1_tlsf", "EBR_LTL_scalable")
+    ebr_ltl_scalable("scripts/scalable-benchmarks/real_1_tlsf", "EBR_LTL_scalable")
+    ebr_ltl_scalable("scripts/scalable-benchmarks/real_2_tlsf", "EBR_LTL_scalable")
+    ebr_ltl_scalable("scripts/scalable-benchmarks/unreal_1_tlsf", "EBR_LTL_scalable")
     ebr_ltl_scalable("scripts/scalable-benchmarks/unreal_2_tlsf", "EBR_LTL_scalable")

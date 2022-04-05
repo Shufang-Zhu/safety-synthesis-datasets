@@ -1,0 +1,22 @@
+INFO {
+TITLE:       "Scalable Random Benchmark n.27"
+DESCRIPTION:       "TSL specification"
+SEMANTICS:   Mealy
+TARGET:   Mealy
+}
+MAIN {
+INPUTS {
+p2;
+p5;
+p6;
+}
+OUTPUTS {
+p11;
+p14;
+p20;
+p15;
+}
+GUARANTEE {
+(!(F !((p2) || X !(p11)) || F !((p2) || X !(p14)) || F !((p5) || X !(p20)) || F !((p6) || X !(p15)) || F (!(X !(p11) || X !(p14)) || !(X !(p11) || X !(p20)) || !(X !(p11) || X !(p15)) || !(X !(p14) || X !(p20)) || !(X !(p14) || X !(p15)) || !(X !(p20) || X !(p15))) || !(!F (p2) || X (!F (p2) || X (!F (p2) || X (!F (p2) || X !F (p2)))) || !F !(X (p11) || X (X (p11) || X (X (p11) || X (X (p11) || X X (p11)))))) || !(!F (p2) || X (!F (p2) || X (!F (p2) || X (!F (p2) || X !F (p2)))) || !F !(X (p14) || X (X (p14) || X (X (p14) || X (X (p14) || X X (p14)))))) || !(!F (p5) || X (!F (p5) || X (!F (p5) || X (!F (p5) || X !F (p5)))) || !F !(X (p20) || X (X (p20) || X (X (p20) || X (X (p20) || X X (p20)))))) || !(!F (p6) || X (!F (p6) || X (!F (p6) || X (!F (p6) || X !F (p6)))) || !F !(X (p15) || X (X (p15) || X (X (p15) || X (X (p15) || X X (p15))))))))
+}
+}

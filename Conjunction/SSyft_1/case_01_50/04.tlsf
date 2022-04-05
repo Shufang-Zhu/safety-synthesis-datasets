@@ -1,0 +1,34 @@
+INFO {
+TITLE:       "Scalable Random_Conjunction Benchmark n.4"
+DESCRIPTION:       "TSL specification"
+SEMANTICS:   Mealy
+TARGET:   Mealy
+}
+MAIN {
+INPUTS {
+p1_idle;
+p1_request0;
+p1_request1;
+p1_request2;
+p1_request3;
+p1_request4;
+p1_request5;
+p1_request6;
+p1_request7;
+p1_request8;
+}
+OUTPUTS {
+p1_grant0;
+p1_grant1;
+p1_grant2;
+p1_grant3;
+p1_grant4;
+p1_grant5;
+p1_grant6;
+p1_grant7;
+p1_grant8;
+}
+GUARANTEE {
+(!(!p1_idle || !X !p1_grant0 || !X !p1_grant1 || !X !p1_grant2 || !X !p1_grant3 || !X !p1_grant4 || !X !p1_grant5 || !X !p1_grant6 || !X !p1_grant7 || !X !p1_grant8 || !X !p1_idle) || !F p1_idle || !(F !(p1_request0 || X !p1_grant0) || F !(p1_request1 || X !p1_grant1) || F !(p1_request2 || X !p1_grant2) || F !(p1_request3 || X !p1_grant3) || F !(p1_request4 || X !p1_grant4) || F !(p1_request5 || X !p1_grant5) || F !(p1_request6 || X !p1_grant6) || F !(p1_request7 || X !p1_grant7) || F !(p1_request8 || X !p1_grant8) || F (!(X !p1_grant0 || X !p1_grant1) || !(X !p1_grant0 || X !p1_grant2) || !(X !p1_grant0 || X !p1_grant3) || !(X !p1_grant0 || X !p1_grant4) || !(X !p1_grant0 || X !p1_grant5) || !(X !p1_grant0 || X !p1_grant6) || !(X !p1_grant0 || X !p1_grant7) || !(X !p1_grant0 || X !p1_grant8) || !(X !p1_grant1 || X !p1_grant2) || !(X !p1_grant1 || X !p1_grant3) || !(X !p1_grant1 || X !p1_grant4) || !(X !p1_grant1 || X !p1_grant5) || !(X !p1_grant1 || X !p1_grant6) || !(X !p1_grant1 || X !p1_grant7) || !(X !p1_grant1 || X !p1_grant8) || !(X !p1_grant2 || X !p1_grant3) || !(X !p1_grant2 || X !p1_grant4) || !(X !p1_grant2 || X !p1_grant5) || !(X !p1_grant2 || X !p1_grant6) || !(X !p1_grant2 || X !p1_grant7) || !(X !p1_grant2 || X !p1_grant8) || !(X !p1_grant3 || X !p1_grant4) || !(X !p1_grant3 || X !p1_grant5) || !(X !p1_grant3 || X !p1_grant6) || !(X !p1_grant3 || X !p1_grant7) || !(X !p1_grant3 || X !p1_grant8) || !(X !p1_grant4 || X !p1_grant5) || !(X !p1_grant4 || X !p1_grant6) || !(X !p1_grant4 || X !p1_grant7) || !(X !p1_grant4 || X !p1_grant8) || !(X !p1_grant5 || X !p1_grant6) || !(X !p1_grant5 || X !p1_grant7) || !(X !p1_grant5 || X !p1_grant8) || !(X !p1_grant6 || X !p1_grant7) || !(X !p1_grant6 || X !p1_grant8) || !(X !p1_grant7 || X !p1_grant8)) || !(!F p1_request0 || !F !X p1_grant0) || !(!F p1_request1 || !F !X p1_grant1) || !(!F p1_request2 || !F !X p1_grant2) || !(!F p1_request3 || !F !X p1_grant3) || !(!F p1_request4 || !F !X p1_grant4) || !(!F p1_request5 || !F !X p1_grant5) || !(!F p1_request6 || !F !X p1_grant6) || !(!F p1_request7 || !F !X p1_grant7) || !(!F p1_request8 || !F !X p1_grant8) || F !(p1_idle || !(!X !p1_grant0 || !X !p1_grant1 || !X !p1_grant2 || !X !p1_grant3 || !X !p1_grant4 || !X !p1_grant5 || !X !p1_grant6 || !X !p1_grant7 || !X !p1_grant8))))
+}
+}

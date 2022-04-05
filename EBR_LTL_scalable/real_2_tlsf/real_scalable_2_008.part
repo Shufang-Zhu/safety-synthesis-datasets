@@ -1,2 +1,2 @@
-.inputs u8 u7 u6 u5 u4 u3 u2 u1 u0
-.outputs c8 c7 c6 c5 c4 c3 c2 c1 c0
+.inputs u7 u6 u5 u4 u3 u2 u1 u0
+.outputs c7 c6 c5 c4 c3 c2 c1 c0

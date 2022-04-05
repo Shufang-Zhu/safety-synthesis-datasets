@@ -19,16 +19,16 @@ def tlsf_gen_real_2(k):
     print('MAIN {', file=out)
     # 'print IN-OUT'
     print('\nINPUTS { ', file=out)
-    for i in range(0,k+2):
+    for i in range(0,k+1):
         print('u',str(i), end = '', sep="", file=out);
-        if(i<k+1):
+        if(i<k):
             print(';', file=out)
         else:
             print(';\n}', file=out)
     print('\nOUTPUTS { ', file=out)
-    for i in range(0,k+2):
+    for i in range(0,k+1):
         print('c',str(i), end = '', sep="", file=out);
-        if(i<k+1):
+        if(i<k):
             print(';', file=out)
         else:
             print(';\n}', file=out)

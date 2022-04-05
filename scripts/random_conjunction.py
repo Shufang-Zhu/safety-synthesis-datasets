@@ -50,14 +50,52 @@ def generate(formula_seeds_folder, partition_seeds_folder, random, conjuncts, nu
         benchmark_folder.mkdir(parents=True, exist_ok=True)
         for i in range(1, number+1):
             if random:
-                formula, partition = random_conjunction(formula_seeds_folder, partition_seeds_folder, c)
+                formula, partition, inputs, outputs = random_conjunction(formula_seeds_folder, partition_seeds_folder, c)
             else:
-                formula, partition = conjunction(formula_seeds_folder, partition_seeds_folder, c)
+                formula, partition, inputs, outputs = conjunction(formula_seeds_folder, partition_seeds_folder, c)
             formula_file = benchmark_folder / Path(f"{i:02d}"+".ltl")
             formula_file.write_text(formula)
 
             partition_file = benchmark_folder / Path(f"{i:02d}"+".part")
             partition_file.write_text(partition)
+
+            tlsf_file = benchmark_folder / Path(f"{i:02d}" + ".tlsf")
+            if random:
+                tlsf_formula = to_tlsf(formula, inputs, outputs, "Random", str(i))
+            else:
+                tlsf_formula = to_tlsf(formula, inputs, outputs, "Random_Conjunction", str(i))
+
+            tlsf_file.write_text(tlsf_formula)
+
+
+
+
+def to_tlsf(formula, inputs, outputs, category, index):
+    info = "INFO {\n";
+    title = "TITLE:       \"Scalable "+category+" Benchmark n."+index+ "\"\n"
+    description = "DESCRIPTION:       \"TSL specification\"\n"
+    semantics = "SEMANTICS:   Mealy\n"
+    target = "TARGET:   Mealy\n"
+    info = info + title + description + semantics + target + "}\n"
+
+    main_block = "MAIN {\n"
+    ins = "INPUTS {\n"
+    for input in inputs:
+        ins = ins + input+";\n"
+    ins = ins+"}\n"
+
+    outs = "OUTPUTS {\n"
+    for output in outputs:
+        outs = outs + output + ";\n"
+    outs = outs + "}\n"
+
+    g = "GUARANTEE {\n" + formula + "\n}"
+    main_block = main_block + ins + outs + g + "\n}"
+    tlsf = info + main_block
+    return tlsf
+
+
+
 
 
 def conjunction(formula_seeds_folder, partition_seeds_folder, conjuncts):
@@ -114,15 +152,22 @@ def conjunction(formula_seeds_folder, partition_seeds_folder, conjuncts):
 
         conjuncted_formula = spot.formula.And([conjuncted_formula, spot.formula(formula_str)])
         print(conjuncted_formula)
-    formula_str = conjuncted_formula.to_str()
-    partition = ".inputs:"
+    formula_str = "("+conjuncted_formula.to_str()+")"
+    formula_str = formula_str.replace("|", "||")
+    formula_str = formula_str.replace("&", "&&")
+    formula_str = formula_str.replace("X", "X ")
+    formula_str = formula_str.replace("F", "F ")
+    formula_str = formula_str.replace("G", "G ")
+    formula_str = formula_str.replace("U", "U ")
+    formula_str = formula_str.replace("R", "R ")
+    partition = ".inputs"
     for var in inputs:
         partition = partition + " " + var
-    partition = partition + "\n.outputs:"
+    partition = partition + "\n.outputs"
     for var in outputs:
         partition = partition + " " + var
 
-    return formula_str, partition
+    return formula_str, partition, inputs, outputs
 
 
 
@@ -144,7 +189,12 @@ def random_conjunction(formula_seeds_folder, partition_seeds_folder, conjuncts):
         content = re.sub("Request", "request", content)
         content = re.sub("Grant", "grant", content)
         spot_formula = spot.formula(content)
+        # print("content---------")
+        # print(content)
+        # print("spot---------")
+        # print(spot_formula)
         conjuncted_formula = spot.formula.And([conjuncted_formula, spot_formula])
+
         print(conjuncted_formula)
         curr_inputs, curr_outputs = read_partitions(part_file)
         props = spot.atomic_prop_collect(spot_formula)
@@ -169,28 +219,36 @@ def random_conjunction(formula_seeds_folder, partition_seeds_folder, conjuncts):
         outputs_relabel[var] = new_name
         rename_label[var] = new_name
 
-    formula_str = conjuncted_formula.to_str()
+    formula_str = "("+conjuncted_formula.to_str()+")"
     print(formula_str)
     for var in rename_label.keys():
         formula_str = formula_str.replace(var, "(" + rename_label[var] + ")")
+    formula_str = formula_str.replace("|", "||")
+    formula_str = formula_str.replace("&", "&&")
+    formula_str = formula_str.replace("X", "X ")
+    formula_str = formula_str.replace("F", "F ")
+    formula_str = formula_str.replace("G", "G ")
+    formula_str = formula_str.replace("U", "U ")
+    formula_str = formula_str.replace("R", "R ")
     print(formula_str)
     print(rename_label)
     partition_inputs = []
     partition_outputs = []
-    partition = ".inputs:"
+    partition = ".inputs"
+
     for var in inputs_relabel.keys():
         new_name = inputs_relabel[var]
         if new_name not in partition_inputs:
             partition_inputs.append(new_name)
             partition = partition + " " + new_name
-    partition = partition + "\n.outputs:"
+    partition = partition + "\n.outputs"
     for var in outputs_relabel.keys():
         new_name = outputs_relabel[var]
         if new_name not in partition_outputs:
             partition_outputs.append(new_name)
             partition = partition + " " + new_name
 
-    return formula_str, partition
+    return formula_str, partition, partition_inputs, partition_outputs
 
 
 def read_partitions(part_file):

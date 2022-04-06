@@ -1,1 +1,1 @@
-((G(in_0 <-> out_1) && G(in_1 <-> out_2) && G(in_2 <-> out_3) && G(in_3 <-> out_4) && G(in_4 <-> out_5) && G(in_5 <-> out_6) && G(in_6 <-> out_7) && G(in_7 <-> out_8) && G(in_8 <-> out_9) && G(in_9 <-> out_10) && G(in_10 <-> out_11) && G(in_11 <-> out_0)))
+(G ((in_0 <-> out_1) && (in_1 <-> out_2) && (in_2 <-> out_3) && (in_3 <-> out_4) && (in_4 <-> out_5) && (in_5 <-> out_6) && (in_6 <-> out_7) && (in_7 <-> out_8) && (in_8 <-> out_9) && (in_9 <-> out_10) && (in_10 <-> out_11) && (in_11 <-> out_0)))

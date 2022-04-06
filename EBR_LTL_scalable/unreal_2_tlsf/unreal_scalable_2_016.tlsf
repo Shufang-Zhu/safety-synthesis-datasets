@@ -1,0 +1,54 @@
+INFO {
+TITLE:       "Scalable Unrealizable Benchmark n.15"
+DESCRIPTION: "Scalable Unrealizable Benchmark n. for Ksy tool."
+SEMANTICS:   Mealy
+TARGET:      Mealy
+}
+MAIN {
+
+INPUTS { 
+u0;
+u1;
+u2;
+u3;
+u4;
+u5;
+u6;
+u7;
+u8;
+u9;
+u10;
+u11;
+u12;
+u13;
+u14;
+u15;
+u16;
+}
+
+OUTPUTS{
+c;
+}
+
+GUARANTEE { 
+
+c && 
+( u0 || u1) && 
+X ( u1 || u2) && 
+X X ( u2 || u3) && 
+X X X ( u3 || u4) && 
+X X X X ( u4 || u5) && 
+X X X X X ( u5 || u6) && 
+X X X X X X ( u6 || u7) && 
+X X X X X X X ( u7 || u8) && 
+X X X X X X X X ( u8 || u9) && 
+X X X X X X X X X ( u9 || u10) && 
+X X X X X X X X X X ( u10 || u11) && 
+X X X X X X X X X X X ( u11 || u12) && 
+X X X X X X X X X X X X ( u12 || u13) && 
+X X X X X X X X X X X X X ( u13 || u14) && 
+X X X X X X X X X X X X X X ( u14 || u15) && 
+X X X X X X X X X X X X X X X ( u15 || u16) 
+}
+}
+

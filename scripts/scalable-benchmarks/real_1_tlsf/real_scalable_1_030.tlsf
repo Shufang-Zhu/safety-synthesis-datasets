@@ -1,0 +1,80 @@
+INFO {
+TITLE:       "Scalable Realizable Benchmark n.29"
+DESCRIPTION: "Scalable Realizable Benchmark n. for Ksy tool."
+SEMANTICS:   Mealy
+TARGET:      Mealy
+}
+MAIN {
+
+INPUTS{
+u;
+}
+
+OUTPUTS { 
+c0;
+c1;
+c2;
+c3;
+c4;
+c5;
+c6;
+c7;
+c8;
+c9;
+c10;
+c11;
+c12;
+c13;
+c14;
+c15;
+c16;
+c17;
+c18;
+c19;
+c20;
+c21;
+c22;
+c23;
+c24;
+c25;
+c26;
+c27;
+c28;
+c29;
+}
+
+GUARANTEE { 
+
+G( c0 && 
+X G( c1 && 
+X X G( c2 && 
+X X X G( c3 && 
+X X X X G( c4 && 
+X X X X X G( c5 && 
+X X X X X X G( c6 && 
+X X X X X X X G( c7 && 
+X X X X X X X X G( c8 && 
+X X X X X X X X X G( c9 && 
+X X X X X X X X X X G( c10 && 
+X X X X X X X X X X X G( c11 && 
+X X X X X X X X X X X X G( c12 && 
+X X X X X X X X X X X X X G( c13 && 
+X X X X X X X X X X X X X X G( c14 && 
+X X X X X X X X X X X X X X X G( c15 && 
+X X X X X X X X X X X X X X X X G( c16 && 
+X X X X X X X X X X X X X X X X X G( c17 && 
+X X X X X X X X X X X X X X X X X X G( c18 && 
+X X X X X X X X X X X X X X X X X X X G( c19 && 
+X X X X X X X X X X X X X X X X X X X X G( c20 && 
+X X X X X X X X X X X X X X X X X X X X X G( c21 && 
+X X X X X X X X X X X X X X X X X X X X X X G( c22 && 
+X X X X X X X X X X X X X X X X X X X X X X X G( c23 && 
+X X X X X X X X X X X X X X X X X X X X X X X X G( c24 && 
+X X X X X X X X X X X X X X X X X X X X X X X X X G( c25 && 
+X X X X X X X X X X X X X X X X X X X X X X X X X X G( c26 && 
+X X X X X X X X X X X X X X X X X X X X X X X X X X X G( c27 && 
+X X X X X X X X X X X X X X X X X X X X X X X X X X X X G( c28 && 
+X X X X X X X X X X X X X X X X X X X X X X X X X X X X X G( c29 || u)
+)))))))))))))))))))))))))))))}
+}
+

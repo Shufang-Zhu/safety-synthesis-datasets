@@ -1,0 +1,54 @@
+INFO {
+TITLE:       "Scalable Unrealizable Benchmark n.15"
+DESCRIPTION: "Scalable Unrealizable Benchmark n. for Ksy tool."
+SEMANTICS:   Mealy
+TARGET:      Mealy
+}
+MAIN {
+
+INPUTS { 
+u0;
+u1;
+u2;
+u3;
+u4;
+u5;
+u6;
+u7;
+u8;
+u9;
+u10;
+u11;
+u12;
+u13;
+u14;
+u15;
+}
+
+OUTPUTS{
+c;
+}
+
+GUARANTEE { 
+
+G( c ) && (
+G( u0 ) || 
+G( u0 && u1 ) || 
+G( u0 && u1 && u2 ) || 
+G( u0 && u1 && u2 && u3 ) || 
+G( u0 && u1 && u2 && u3 && u4 ) || 
+G( u0 && u1 && u2 && u3 && u4 && u5 ) || 
+G( u0 && u1 && u2 && u3 && u4 && u5 && u6 ) || 
+G( u0 && u1 && u2 && u3 && u4 && u5 && u6 && u7 ) || 
+G( u0 && u1 && u2 && u3 && u4 && u5 && u6 && u7 && u8 ) || 
+G( u0 && u1 && u2 && u3 && u4 && u5 && u6 && u7 && u8 && u9 ) || 
+G( u0 && u1 && u2 && u3 && u4 && u5 && u6 && u7 && u8 && u9 && u10 ) || 
+G( u0 && u1 && u2 && u3 && u4 && u5 && u6 && u7 && u8 && u9 && u10 && u11 ) || 
+G( u0 && u1 && u2 && u3 && u4 && u5 && u6 && u7 && u8 && u9 && u10 && u11 && u12 ) || 
+G( u0 && u1 && u2 && u3 && u4 && u5 && u6 && u7 && u8 && u9 && u10 && u11 && u12 && u13 ) || 
+G( u0 && u1 && u2 && u3 && u4 && u5 && u6 && u7 && u8 && u9 && u10 && u11 && u12 && u13 && u14 ) || 
+G( u0 && u1 && u2 && u3 && u4 && u5 && u6 && u7 && u8 && u9 && u10 && u11 && u12 && u13 && u14 && u15) 
+)
+}
+}
+

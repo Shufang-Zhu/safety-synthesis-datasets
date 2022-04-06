@@ -10,6 +10,7 @@ INPUTS {
 u0;
 u1;
 u2;
+}
 
 OUTPUTS{
 c;

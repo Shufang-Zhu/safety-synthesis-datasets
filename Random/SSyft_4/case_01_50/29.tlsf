@@ -1,0 +1,19 @@
+INFO {
+TITLE:       "Scalable Random Benchmark n.29"
+DESCRIPTION:       "TSL specification"
+SEMANTICS:   Mealy
+TARGET:   Mealy
+}
+MAIN {
+INPUTS {
+p3;
+p7;
+}
+OUTPUTS {
+p14;
+p13;
+}
+GUARANTEE {
+(!(F !((p3) || X !(p14)) || F !((p7) || X !(p13))))
+}
+}

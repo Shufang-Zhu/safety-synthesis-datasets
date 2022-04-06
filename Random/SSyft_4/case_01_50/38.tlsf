@@ -1,0 +1,21 @@
+INFO {
+TITLE:       "Scalable Random Benchmark n.38"
+DESCRIPTION:       "TSL specification"
+SEMANTICS:   Mealy
+TARGET:   Mealy
+}
+MAIN {
+INPUTS {
+p5;
+p8;
+p4;
+}
+OUTPUTS {
+p20;
+p11;
+p13;
+}
+GUARANTEE {
+(!(F !((p5) || X !(p20)) || F !((p8) || X !(p11)) || F !((p4) || X !(p13)) || F (!(X !(p20) || X !(p11)) || !(X !(p20) || X !(p13)) || !(X !(p11) || X !(p13))) || F !(X (p20) || X (X (p20) || X (X (p20) || X X (p20)))) || F !(X (p11) || X (X (p11) || X (X (p11) || X X (p11)))) || F !(X (p13) || X (X (p13) || X (X (p13) || X X (p13))))))
+}
+}

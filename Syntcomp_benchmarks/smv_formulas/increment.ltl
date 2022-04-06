@@ -1,0 +1,1 @@
+((G (!((utermcountcount && (!utermcountincrementdcountb)) <-> ((!utermcountcount) && utermcountincrementdcountb)))) && (G (ptermeventdclickb <-> utermcountincrementdcountb)))

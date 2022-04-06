@@ -1,0 +1,1 @@
+((G (!((utermstepssteps && (!(utermstepsmovedb || utermstepsstopdb))) <-> ((!utermstepssteps) && (!(((!utermstepsmovedb) && utermstepsstopdb) <-> (utermstepsmovedb && (!utermstepsstopdb)))))))) && (G (utermstepsmovedb <-> (ptermentereventdbottomb && (!ptermexiteventdtopb)))) && (G (utermstepsstopdb <-> ((!ptermentereventdbottomb) && ptermexiteventdtopb))))

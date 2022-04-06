@@ -1,2 +1,2 @@
-.inputs: p8 p2 p10 p4 p9 p6
-.outputs: p15 p18 p11 p19 p20
+.inputs p3 p9 p1
+.outputs p13 p14 p20

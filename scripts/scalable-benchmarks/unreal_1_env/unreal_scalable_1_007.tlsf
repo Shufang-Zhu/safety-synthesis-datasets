@@ -1,0 +1,36 @@
+INFO {
+TITLE:       "Scalable Unrealizable Benchmark n.6"
+DESCRIPTION: "Scalable Unrealizable Benchmark n. for Ksy tool."
+SEMANTICS:   Mealy
+TARGET:      Mealy
+}
+MAIN {
+
+INPUTS { 
+u0;
+u1;
+u2;
+u3;
+u4;
+u5;
+u6;
+}
+
+OUTPUTS{
+c;
+}
+
+GUARANTEE { 
+
+G( c ) && (
+G( X(u0) ) || 
+G( X(u0) && X(u1) ) || 
+G( X(u0) && X(u1) && X(u2) ) || 
+G( X(u0) && X(u1) && X(u2) && X(u3) ) || 
+G( X(u0) && X(u1) && X(u2) && X(u3) && X(u4) ) || 
+G( X(u0) && X(u1) && X(u2) && X(u3) && X(u4) && X(u5) ) || 
+G( X(u0) && X(u1) && X(u2) && X(u3) && X(u4) && X(u5) && X(u6)) 
+)
+}
+}
+

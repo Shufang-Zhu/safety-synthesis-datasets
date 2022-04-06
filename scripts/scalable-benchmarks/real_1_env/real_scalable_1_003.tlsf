@@ -1,0 +1,26 @@
+INFO {
+TITLE:       "Scalable Realizable Benchmark n.2"
+DESCRIPTION: "Scalable Realizable Benchmark n. for Ksy tool."
+SEMANTICS:   Mealy
+TARGET:      Mealy
+}
+MAIN {
+
+INPUTS{
+u;
+}
+
+OUTPUTS { 
+c0;
+c1;
+c2;
+}
+
+GUARANTEE { 
+
+G( X(c0) && 
+X G( X(c1) && 
+X X G( X(c2) || u)
+))}
+}
+

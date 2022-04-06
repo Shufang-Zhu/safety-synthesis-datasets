@@ -3,9 +3,48 @@
 import sys, getopt
 from pathlib import Path
 
+def tlsf_gen_real_1_env(k):
+    filename = 'real_1_env/real_scalable_1_'+str('{0:03}'.format(k+1))+'.tlsf'
+    out = open(filename, 'w')
+    # 'print INFO'
+    print('INFO {', file=out)
+    print('TITLE:       \"Scalable Realizable Benchmark n.'+str(k)+ '\"', file=out)
+    print('DESCRIPTION: \"Scalable Realizable Benchmark n. for Ksy tool.\"', file=out)
+    print('SEMANTICS:   Mealy', file=out)
+    print('TARGET:      Mealy', file=out)
+    print('}', file=out)
+    # end 'print INFO'
+    print('MAIN {', file=out)
+    # 'print IN-OUT'
+    print('\nINPUTS{\nu;\n}', file=out)
+    print('\nOUTPUTS { ', file=out)
+    for i in range(0,k+1):
+        print('c',str(i), end = '', sep="", file=out);
+        if(i<k):
+            print(';', file=out)
+        else:
+            print(';\n}', file=out)
+    # end 'print IN-OUT'
+    # 'print GUARANTEE'
+    print('\nGUARANTEE { \n', file=out)
+    if(k<0):
+        print('*** The index must be >= 0.');
+        sys.exit()
+    for i in range(0,k+1):
+        for j in range(1,i+1):
+            print('X ', end = '', file=out)
+        if(i==k):
+            print('G( X(c',str(i), ') || u)', sep="", file=out)
+        else:
+            print('G( X(c',str(i), ') && ', sep="", file=out)
+    for i in range(0,k):
+        print(')', end = '', file=out)
+    print('}\n}\n', file=out)
+    # end 'print GUARANTEE'
+
 
 def tlsf_gen_real_1(k):
-    filename = 'real_1_tlsf/real_scalable_1_'+str('{0:03}'.format(k+1))+'.tlsf'
+    filename = 'real_1/real_scalable_1_'+str('{0:03}'.format(k+1))+'.tlsf'
     out = open(filename, 'w')
     # 'print INFO'
     print('INFO {', file=out)
@@ -97,8 +136,11 @@ def main(argv):
         print('*** Please specify the format with -f <format>')
         sys.exit()
 
-    save_tlsf = Path("real_1_tlsf")
+    save_tlsf = Path("real_1")
     save_tlsf.mkdir(parents=True, exist_ok=True)
+
+    save_tlsf_env = Path("real_1_env")
+    save_tlsf_env.mkdir(parents=True, exist_ok=True)
 
     # save_smv = Path("real_1_smv")
     # save_smv.mkdir(parents=True, exist_ok=True)
@@ -110,6 +152,7 @@ def main(argv):
         elif _format == "tlsf":
             print('Generating file real_scalable_1_', str('{0:03}'.format(i+1)), '.tlsf',sep='')
             tlsf_gen_real_1(i);
+            tlsf_gen_real_1_env(i);
         else:
             sys.exit()
 

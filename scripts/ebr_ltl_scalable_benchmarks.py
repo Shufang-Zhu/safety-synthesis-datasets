@@ -25,7 +25,12 @@ def ebr_ltl_scalable(formula_seeds_folder, save):
 
 
 if __name__ == "__main__":
-    ebr_ltl_scalable("scripts/scalable-benchmarks/real_1_tlsf", "EBR_LTL_scalable")
-    ebr_ltl_scalable("scripts/scalable-benchmarks/real_2_tlsf", "EBR_LTL_scalable")
-    ebr_ltl_scalable("scripts/scalable-benchmarks/unreal_1_tlsf", "EBR_LTL_scalable")
-    ebr_ltl_scalable("scripts/scalable-benchmarks/unreal_2_tlsf", "EBR_LTL_scalable")
+    ebr_ltl_scalable("scripts/scalable-benchmarks/real_1", "EBR_LTL_scalable")
+    ebr_ltl_scalable("scripts/scalable-benchmarks/real_2", "EBR_LTL_scalable")
+    ebr_ltl_scalable("scripts/scalable-benchmarks/unreal_1", "EBR_LTL_scalable")
+    ebr_ltl_scalable("scripts/scalable-benchmarks/unreal_2", "EBR_LTL_scalable")
+
+    ebr_ltl_scalable("scripts/scalable-benchmarks/real_1_env", "EBR_LTL_scalable_env")
+    ebr_ltl_scalable("scripts/scalable-benchmarks/real_2_env", "EBR_LTL_scalable_env")
+    ebr_ltl_scalable("scripts/scalable-benchmarks/unreal_1_env", "EBR_LTL_scalable_env")
+    ebr_ltl_scalable("scripts/scalable-benchmarks/unreal_2_env", "EBR_LTL_scalable_env")

@@ -102,7 +102,7 @@ def syntcomp_env(formula_seeds_folder, tlsf_formula_seeds_folder, save):
 
         tlsf_formula_file = tlsf_formula_seeds_folder_str + "/" + file.stem + "_canonized.tlsf"
 
-        formula_file = save_str + "/" + file.parent.stem + "/" + file.stem + ".ltl"
+        formula_file = save_str + "/" + file.parent.stem + "/" + file.stem + ".Xltl"
         part_file = save_str + "/" + file.parent.stem + "/" + file.stem + ".part"
 
 
@@ -162,6 +162,11 @@ def syntcomp_env(formula_seeds_folder, tlsf_formula_seeds_folder, save):
         part_str = part_ins[:-1] + "\n" + part_outs[:-1] + "\n"
         Path(part_file).write_text(part_str)
 
+# TODO How to generate the env-first tlsf version of this dataset? Note that in order to do so, we need to add a neXt infront of all ENV variablee.
+# However, for ebr_ltl, doing so would make the formula not count as Extended bounded response LTL anymore.
+# Maybe we need to filter the formulas, and select the only possible ones.
+
 if __name__ == "__main__":
-    syntcomp("scripts/syntcomp-benchmarks/smv_formulas", "scripts/syntcomp-benchmarks/tlsf_canonized", "Syntcomp_benchmarks")
-    syntcomp_env("scripts/syntcomp-benchmarks/smv_formulas", "scripts/syntcomp-benchmarks/tlsf_canonized", "Syntcomp_benchmarks_env")
+    # It is necessary to not take the ltl formula stored in the tlsf_canonized files, since they might contain PLTL connectives, e.g., Y for yesterday.
+    syntcomp("Dataset_seeds/syntcomp-benchmarks/smv_formulas", "Dataset_seeds/syntcomp-benchmarks/tlsf_canonized", "Syntcomp_benchmarks")
+    syntcomp_env("Dataset_seeds/syntcomp-benchmarks/smv_formulas", "Dataset_seeds/syntcomp-benchmarks/tlsf_canonized", "Syntcomp_benchmarks")

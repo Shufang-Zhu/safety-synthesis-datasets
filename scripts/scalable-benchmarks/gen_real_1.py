@@ -4,7 +4,7 @@ import sys, getopt
 from pathlib import Path
 
 def tlsf_gen_real_1_env(k):
-    filename = 'real_1_env/real_scalable_1_'+str('{0:03}'.format(k+1))+'.tlsf'
+    filename = 'Dataset_seeds/scalable-benchmarks/real_1/real_scalable_1_'+str('{0:03}'.format(k+1))+'.Xtlsf'
     out = open(filename, 'w')
     # 'print INFO'
     print('INFO {', file=out)
@@ -44,7 +44,7 @@ def tlsf_gen_real_1_env(k):
 
 
 def tlsf_gen_real_1(k):
-    filename = 'real_1/real_scalable_1_'+str('{0:03}'.format(k+1))+'.tlsf'
+    filename = 'Dataset_seeds/scalable-benchmarks/real_1/real_scalable_1_'+str('{0:03}'.format(k+1))+'.tlsf'
     out = open(filename, 'w')
     # 'print INFO'
     print('INFO {', file=out)
@@ -136,11 +136,8 @@ def main(argv):
         print('*** Please specify the format with -f <format>')
         sys.exit()
 
-    save_tlsf = Path("real_1")
+    save_tlsf = Path("Dataset_seeds/scalable-benchmarks/real_1")
     save_tlsf.mkdir(parents=True, exist_ok=True)
-
-    save_tlsf_env = Path("real_1_env")
-    save_tlsf_env.mkdir(parents=True, exist_ok=True)
 
     # save_smv = Path("real_1_smv")
     # save_smv.mkdir(parents=True, exist_ok=True)

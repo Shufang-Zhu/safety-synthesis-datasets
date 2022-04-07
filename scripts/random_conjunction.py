@@ -40,19 +40,27 @@ def generate(formula_seeds_folder, partition_seeds_folder, random, conjuncts, nu
     formula_seeds_folder = Path(formula_seeds_folder)
     partition_seeds_folder = Path(partition_seeds_folder)
     if random:
-        save = Path("Random")
+        save = Path("Random_Conjunction")
+        # save_env = Path("Random_Conjunction_env")
     else:
         save = Path("Conjunction")
+        # save_env = Path("Conjunction_env")
     dataset_folder = save / Path(str(formula_seeds_folder.stem))
     dataset_folder.mkdir(parents=True, exist_ok=True)
+
+    # dataset_folder_env = save_env / Path(str(formula_seeds_folder.stem))
+    # dataset_folder_env.mkdir(parents=True, exist_ok=True)
     for c in range(1, conjuncts+1):
         benchmark_folder = dataset_folder / Path("case_"+f"{c:02d}"+"_"+str(number))
         benchmark_folder.mkdir(parents=True, exist_ok=True)
+
+        # benchmark_folder_env = dataset_folder_env / Path("case_" + f"{c:02d}" + "_" + str(number))
+        # benchmark_folder_env.mkdir(parents=True, exist_ok=True)
         for i in range(1, number+1):
             if random:
-                formula, partition, inputs, outputs = random_conjunction(formula_seeds_folder, partition_seeds_folder, c)
+                formula, formula_env, partition, inputs, outputs = random_conjunction(formula_seeds_folder, partition_seeds_folder, c)
             else:
-                formula, partition, inputs, outputs = conjunction(formula_seeds_folder, partition_seeds_folder, c)
+                formula, formula_env, partition, inputs, outputs = conjunction(formula_seeds_folder, partition_seeds_folder, c)
             formula_file = benchmark_folder / Path(f"{i:02d}"+".ltl")
             formula_file.write_text(formula)
 
@@ -61,11 +69,27 @@ def generate(formula_seeds_folder, partition_seeds_folder, random, conjuncts, nu
 
             tlsf_file = benchmark_folder / Path(f"{i:02d}" + ".tlsf")
             if random:
-                tlsf_formula = to_tlsf(formula, inputs, outputs, "Random", str(i))
-            else:
                 tlsf_formula = to_tlsf(formula, inputs, outputs, "Random_Conjunction", str(i))
+            else:
+                tlsf_formula = to_tlsf(formula, inputs, outputs, "Conjunction", str(i))
 
             tlsf_file.write_text(tlsf_formula)
+
+            # env-first
+            formula_file_env = benchmark_folder / Path(f"{i:02d}" + ".Xltl")
+            formula_file_env.write_text(formula_env)
+
+            # partition_file_env = benchmark_folder_env / Path(f"{i:02d}" + ".part")
+            # partition_file_env.write_text(partition)
+
+            tlsf_file_env = benchmark_folder / Path(f"{i:02d}" + ".Xtlsf")
+            if random:
+                tlsf_formula_env = to_tlsf(formula_env, inputs, outputs, "Random_Conjunction", str(i))
+            else:
+                tlsf_formula_env = to_tlsf(formula_env, inputs, outputs, "Conjunction", str(i))
+
+            tlsf_file_env.write_text(tlsf_formula_env)
+
 
 
 
@@ -110,7 +134,7 @@ def conjunction(formula_seeds_folder, partition_seeds_folder, conjuncts):
     outputs = []
     for i in range(1, conjuncts + 1):
         formula_file = random.choice(files)
-        print(formula_file.stem)
+        # print(formula_file.stem)
         part_file = partition_seeds_folder / f"{formula_file.stem}.part"
         content = Path(formula_file).read_text()
         content = re.sub("Request", "request", content)
@@ -141,18 +165,18 @@ def conjunction(formula_seeds_folder, partition_seeds_folder, conjuncts):
             rename_label[var] = new_name
             outputs_relabeled.append(new_name)
 
-        formula_str = spot_formula.to_str()
-        print(formula_str)
+        formula_str = "(" + "{0:p}".format(spot_formula) + ")"
+        # print(formula_str)
         for var in rename_label.keys():
-            formula_str = formula_str.replace(var, "(" + rename_label[var] + ")")
+            formula_str = formula_str.replace("("+var+")", "(" + rename_label[var] + ")")
 
 
         inputs.extend(inputs_relabeled)
         outputs.extend(outputs_relabeled)
 
         conjuncted_formula = spot.formula.And([conjuncted_formula, spot.formula(formula_str)])
-        print(conjuncted_formula)
-    formula_str = "("+conjuncted_formula.to_str()+")"
+        # print(conjuncted_formula)
+    formula_str = "(" + "{0:p}".format(conjuncted_formula) + ")"
     formula_str = formula_str.replace("|", "||")
     formula_str = formula_str.replace("&", "&&")
     formula_str = formula_str.replace("X", "X ")
@@ -160,14 +184,21 @@ def conjunction(formula_seeds_folder, partition_seeds_folder, conjuncts):
     formula_str = formula_str.replace("G", "G ")
     formula_str = formula_str.replace("U", "U ")
     formula_str = formula_str.replace("R", "R ")
+
+    formula_env_str = formula_str
     partition = ".inputs"
+    # print(formula_env_str)
+    # print(inputs)
     for var in inputs:
+        # print(var)
         partition = partition + " " + var
+        formula_env_str = formula_env_str.replace("(" + var + ")", "(X(" + var + "))")
+    # print(formula_env_str)
     partition = partition + "\n.outputs"
     for var in outputs:
         partition = partition + " " + var
 
-    return formula_str, partition, inputs, outputs
+    return formula_str, formula_env_str, partition, inputs, outputs
 
 
 
@@ -183,7 +214,7 @@ def random_conjunction(formula_seeds_folder, partition_seeds_folder, conjuncts):
     outputs = []
     for i in range(1, conjuncts+1):
         formula_file = random.choice(files)
-        print(formula_file.stem)
+        # print(formula_file.stem)
         part_file = partition_seeds_folder / f"{formula_file.stem}.part"
         content = Path(formula_file).read_text()
         content = re.sub("Request", "request", content)
@@ -195,7 +226,7 @@ def random_conjunction(formula_seeds_folder, partition_seeds_folder, conjuncts):
         # print(spot_formula)
         conjuncted_formula = spot.formula.And([conjuncted_formula, spot_formula])
 
-        print(conjuncted_formula)
+        # print(conjuncted_formula)
         curr_inputs, curr_outputs = read_partitions(part_file)
         props = spot.atomic_prop_collect(spot_formula)
         for var in curr_inputs:
@@ -219,10 +250,10 @@ def random_conjunction(formula_seeds_folder, partition_seeds_folder, conjuncts):
         outputs_relabel[var] = new_name
         rename_label[var] = new_name
 
-    formula_str = "("+conjuncted_formula.to_str()+")"
-    print(formula_str)
+    formula_str = "(" + "{0:p}".format(conjuncted_formula) + ")"
+    # print(formula_str)
     for var in rename_label.keys():
-        formula_str = formula_str.replace(var, "(" + rename_label[var] + ")")
+        formula_str = formula_str.replace("("+var+")", "(" + rename_label[var] + ")")
     formula_str = formula_str.replace("|", "||")
     formula_str = formula_str.replace("&", "&&")
     formula_str = formula_str.replace("X", "X ")
@@ -230,17 +261,22 @@ def random_conjunction(formula_seeds_folder, partition_seeds_folder, conjuncts):
     formula_str = formula_str.replace("G", "G ")
     formula_str = formula_str.replace("U", "U ")
     formula_str = formula_str.replace("R", "R ")
-    print(formula_str)
-    print(rename_label)
+    # print(formula_str)
+    # print(rename_label)
     partition_inputs = []
     partition_outputs = []
     partition = ".inputs"
 
+
+
+    formula_env_str = formula_str
     for var in inputs_relabel.keys():
         new_name = inputs_relabel[var]
+        formula_env_str = formula_env_str.replace("("+new_name+")", "(X("+new_name+"))")
         if new_name not in partition_inputs:
             partition_inputs.append(new_name)
             partition = partition + " " + new_name
+    # print(formula_env_str)
     partition = partition + "\n.outputs"
     for var in outputs_relabel.keys():
         new_name = outputs_relabel[var]
@@ -248,7 +284,7 @@ def random_conjunction(formula_seeds_folder, partition_seeds_folder, conjuncts):
             partition_outputs.append(new_name)
             partition = partition + " " + new_name
 
-    return formula_str, partition, partition_inputs, partition_outputs
+    return formula_str, formula_env_str, partition, partition_inputs, partition_outputs
 
 
 def read_partitions(part_file):

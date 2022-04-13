@@ -1,4 +1,5 @@
-# Dependencies
+## Dependencies
+  One can also directly use the already generated benchmarks without installing the following dependencies.
   1. Python3
      
   2. [Syfco](https://github.com/reactive-systems/syfco)

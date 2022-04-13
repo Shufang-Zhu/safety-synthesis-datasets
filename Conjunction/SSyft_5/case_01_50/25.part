@@ -1,0 +1,2 @@
+.inputs p1_idle p1_request0 p1_request1
+.outputs p1_grant0 p1_grant1

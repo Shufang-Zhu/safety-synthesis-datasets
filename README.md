@@ -1,8 +1,16 @@
 ## Generate Datasets
+### Basic setup
+  1. Python3
+     
+  2. [Syfco](https://github.com/reactive-systems/syfco)
+  
+  3. Python package from [spot](https://spot.lrde.epita.fr/install.html)
+
+  4. Generate datasets
   ```sh
   bash scripts/generate-all-datasets.sh
   ```
-  This generate benchmarks of 3 dataset families: 
+  This generates benchmarks of 3 dataset families: 
   - Conjunction, under folder Conjunction/..  
   - Random_Conjunction, under folder Random/..
   - EBR_LTL, under folder EBR_LTL/..

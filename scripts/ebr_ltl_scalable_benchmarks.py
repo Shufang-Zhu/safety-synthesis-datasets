@@ -57,5 +57,5 @@ def generate_dataset():
 
 
 if __name__ == "__main__":
-    generate_tlsf_seeds(40, 10, 50, 50)
+    generate_tlsf_seeds(200, 200, 200, 200)
     generate_dataset()

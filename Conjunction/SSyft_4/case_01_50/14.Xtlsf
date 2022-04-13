@@ -1,0 +1,24 @@
+INFO {
+TITLE:       "Scalable Conjunction Benchmark n.14"
+DESCRIPTION:       "TSL specification"
+SEMANTICS:   Mealy
+TARGET:   Mealy
+}
+MAIN {
+INPUTS {
+p1_idle;
+p1_request0;
+p1_request1;
+p1_request2;
+p1_request3;
+}
+OUTPUTS {
+p1_grant0;
+p1_grant1;
+p1_grant2;
+p1_grant3;
+}
+GUARANTEE {
+(!((F (!((X(p1_request0)) || (X (!(p1_grant0)))))) || (F (!((X(p1_request1)) || (X (!(p1_grant1)))))) || (F (!((X(p1_request2)) || (X (!(p1_grant2)))))) || (F (!((X(p1_request3)) || (X (!(p1_grant3)))))) || (F ((!((X (!(p1_grant0))) || (X (!(p1_grant1))))) || (!((X (!(p1_grant0))) || (X (!(p1_grant2))))) || (!((X (!(p1_grant0))) || (X (!(p1_grant3))))) || (!((X (!(p1_grant1))) || (X (!(p1_grant2))))) || (!((X (!(p1_grant1))) || (X (!(p1_grant3))))) || (!((X (!(p1_grant2))) || (X (!(p1_grant3))))))) || (!((!(F (X(p1_request0)))) || (X ((!(F (X(p1_request0)))) || (X ((!(F (X(p1_request0)))) || (X (!(F (X(p1_request0))))))))) || (!(F (!((X (p1_grant0)) || (X ((X (p1_grant0)) || (X ((X (p1_grant0)) || (X (X (p1_grant0))))))))))))) || (!((!(F (X(p1_request1)))) || (X ((!(F (X(p1_request1)))) || (X ((!(F (X(p1_request1)))) || (X (!(F (X(p1_request1))))))))) || (!(F (!((X (p1_grant1)) || (X ((X (p1_grant1)) || (X ((X (p1_grant1)) || (X (X (p1_grant1))))))))))))) || (!((!(F (X(p1_request2)))) || (X ((!(F (X(p1_request2)))) || (X ((!(F (X(p1_request2)))) || (X (!(F (X(p1_request2))))))))) || (!(F (!((X (p1_grant2)) || (X ((X (p1_grant2)) || (X ((X (p1_grant2)) || (X (X (p1_grant2))))))))))))) || (!((!(F (X(p1_request3)))) || (X ((!(F (X(p1_request3)))) || (X ((!(F (X(p1_request3)))) || (X (!(F (X(p1_request3))))))))) || (!(F (!((X (p1_grant3)) || (X ((X (p1_grant3)) || (X ((X (p1_grant3)) || (X (X (p1_grant3))))))))))))) || (F (!((X(p1_idle)) || (!((!(X (!(p1_grant0)))) || (!(X (!(p1_grant1)))) || (!(X (!(p1_grant2)))) || (!(X (!(p1_grant3)))))))))))
+}
+}

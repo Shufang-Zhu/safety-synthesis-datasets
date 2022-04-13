@@ -1,0 +1,22 @@
+INFO {
+TITLE:       "Scalable Random_Conjunction Benchmark n.44"
+DESCRIPTION:       "TSL specification"
+SEMANTICS:   Mealy
+TARGET:   Mealy
+}
+MAIN {
+INPUTS {
+p5;
+p6;
+p2;
+p3;
+}
+OUTPUTS {
+p18;
+p19;
+p20;
+}
+GUARANTEE {
+(!((F (!((p5) || (X (!(p18)))))) || (F (!((p6) || (X (!(p19)))))) || (F (!((p2) || (X (!(p20)))))) || (F (!((p3) || (X (!(p18)))))) || (F (!((p5) || (X (!(p18)))))) || (F (!((p3) || (X (!(p18))))))))
+}
+}

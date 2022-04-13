@@ -50,15 +50,11 @@ def generate_tlsf_seeds(real_1, real_2, unreal_1, unreal_2):
     os.system(cmd_unreal_2)
 
 def generate_dataset():
-    ebr_ltl_scalable("Dataset_seeds/scalable-benchmarks/real_1", "EBR_LTL_scalable")
-    ebr_ltl_scalable("Dataset_seeds/scalable-benchmarks/real_2", "EBR_LTL_scalable")
-    ebr_ltl_scalable("Dataset_seeds/scalable-benchmarks/unreal_1", "EBR_LTL_scalable")
-    ebr_ltl_scalable("Dataset_seeds/scalable-benchmarks/unreal_2", "EBR_LTL_scalable")
+    ebr_ltl_scalable("Dataset_seeds/scalable-benchmarks/real_1", "EBR_LTL/Scalable")
+    ebr_ltl_scalable("Dataset_seeds/scalable-benchmarks/real_2", "EBR_LTL/Scalable")
+    ebr_ltl_scalable("Dataset_seeds/scalable-benchmarks/unreal_1", "EBR_LTL/Scalable")
+    ebr_ltl_scalable("Dataset_seeds/scalable-benchmarks/unreal_2", "EBR_LTL/Scalable")
 
-    # ebr_ltl_scalable("Dataset_seeds/scalable-benchmarks/env/real_1", "EBR_LTL_scalable_env")
-    # ebr_ltl_scalable("Dataset_seeds/scalable-benchmarks/env/real_2", "EBR_LTL_scalable_env")
-    # ebr_ltl_scalable("Dataset_seeds/scalable-benchmarks/env/unreal_1", "EBR_LTL_scalable_env")
-    # ebr_ltl_scalable("Dataset_seeds/scalable-benchmarks/env/unreal_2", "EBR_LTL_scalable_env")
 
 if __name__ == "__main__":
     generate_tlsf_seeds(40, 10, 50, 50)

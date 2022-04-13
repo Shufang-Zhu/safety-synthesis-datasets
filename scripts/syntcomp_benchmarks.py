@@ -168,5 +168,5 @@ def syntcomp_env(formula_seeds_folder, tlsf_formula_seeds_folder, save):
 
 if __name__ == "__main__":
     # It is necessary to not take the ltl formula stored in the tlsf_canonized files, since they might contain PLTL connectives, e.g., Y for yesterday.
-    syntcomp("Dataset_seeds/syntcomp-benchmarks/smv_formulas", "Dataset_seeds/syntcomp-benchmarks/tlsf_canonized", "Syntcomp_benchmarks")
-    syntcomp_env("Dataset_seeds/syntcomp-benchmarks/smv_formulas", "Dataset_seeds/syntcomp-benchmarks/tlsf_canonized", "Syntcomp_benchmarks")
+    syntcomp("Dataset_seeds/syntcomp-benchmarks/smv_formulas", "Dataset_seeds/syntcomp-benchmarks/tlsf_canonized", "EBR_LTL/Syntcomp_benchmarks")
+    syntcomp_env("Dataset_seeds/syntcomp-benchmarks/smv_formulas", "Dataset_seeds/syntcomp-benchmarks/tlsf_canonized", "EBR_LTL/Syntcomp_benchmarks")

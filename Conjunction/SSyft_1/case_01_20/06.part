@@ -1,2 +1,2 @@
-.inputs p1_idle p1_request0 p1_request1 p1_request2 p1_request3 p1_request4 p1_request5 p1_request6 p1_request7 p1_request8
-.outputs p1_grant0 p1_grant1 p1_grant2 p1_grant3 p1_grant4 p1_grant5 p1_grant6 p1_grant7 p1_grant8
+.inputs p1_idle p1_request0 p1_request1
+.outputs p1_grant0 p1_grant1

@@ -1,0 +1,1 @@
+time -p bin/strix -f "(!((F (!((p1_request0) || (X (!(p1_grant0)))))) || (F (!((p1_request1) || (X (!(p1_grant1)))))) || (F (!((X (!(p1_grant0))) || (X (!(p1_grant1)))))) || (F (!((X (p1_grant0)) || (X (X (p1_grant0)))))) || (F (!((X (p1_grant1)) || (X (X (p1_grant1))))))))" --ins=p1_request0,p1_request1 --outs=p1_grant0,p1_grant1

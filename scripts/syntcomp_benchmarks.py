@@ -162,6 +162,25 @@ def syntcomp_env(formula_seeds_folder, tlsf_formula_seeds_folder, save):
         part_str = part_ins[:-1] + "\n" + part_outs[:-1] + "\n"
         Path(part_file).write_text(part_str)
 
+        formula = Path(formula_file).read_text()
+        partition = Path(part_file).read_text()
+        partition.strip("\n")
+        substr = partition.split("\n")
+        ins = substr[0].split(" ")[1:]
+        outs = substr[1].split(" ")[1:]
+        strix_ins = ""
+        for prop in ins:
+            strix_ins = strix_ins + prop + ","
+        strix_ins = strix_ins[:-1]
+        strix_outs = ""
+        for prop in outs:
+            strix_outs = strix_outs + prop + ","
+        strix_outs = strix_outs[:-1]
+        singularity_file = save_str + "/" + file.parent.stem + "/" + file.stem + "_strix.sh"
+        singularity_cmd = "time -p bin/strix -f \"" + formula + "\" --ins=" + strix_ins + " --outs=" + strix_outs
+        Path(singularity_file).write_text(singularity_cmd)
+
+
 # TODO How to generate the env-first tlsf version of this dataset? Note that in order to do so, we need to add a neXt infront of all ENV variablee.
 # However, for ebr_ltl, doing so would make the formula not count as Extended bounded response LTL anymore.
 # Maybe we need to filter the formulas, and select the only possible ones.

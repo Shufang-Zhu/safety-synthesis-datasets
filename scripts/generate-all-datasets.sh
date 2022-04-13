@@ -13,8 +13,8 @@ for formula_seeds in ${formula_seeds_set}; do
     python3 "scripts/random_conjunction.py" "--conjuncts" "5" "--number" "50" "${formula_seeds}" "${partition_seeds}"
 done
 
-python3 "scripts/syntcomp_benchmarks.py"
+#python3 "scripts/syntcomp_benchmarks.py"
 
-python3 "scripts/ebr_ltl_scalable_benchmarks.py"
+#python3 "scripts/ebr_ltl_scalable_benchmarks.py"
 
 set +e

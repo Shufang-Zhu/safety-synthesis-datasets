@@ -1,0 +1,1 @@
+time -p bin/strix -f "((G (!(((utermcountcount) && (!(utermcountincrementdcountb))) <-> ((!(utermcountcount)) && (utermcountincrementdcountb))))) && (G ((X(ptermeventdclickb)) <-> (utermcountincrementdcountb))))" --ins=ptermeventdclickb --outs=utermcountcount,utermcountincrementdcountb

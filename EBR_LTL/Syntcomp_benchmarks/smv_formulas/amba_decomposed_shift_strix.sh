@@ -1,0 +1,1 @@
+time -p bin/strix -f "(G (((X(hready)) -> ((X(locked)) <-> (X (hmastlock)))) && ((!(X(hready))) -> ((hmastlock) <-> (X (hmastlock))))))" --ins=hready,locked --outs=hmastlock

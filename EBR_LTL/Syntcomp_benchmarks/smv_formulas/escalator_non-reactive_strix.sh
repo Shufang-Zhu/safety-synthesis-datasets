@@ -1,0 +1,1 @@
+time -p bin/strix -f "((G (!(((utermstepsmovedb) && (!(utermstepssteps))) <-> ((!(utermstepsmovedb)) && (utermstepssteps))))) && (G (utermstepsmovedb)))" --ins= --outs=utermstepsmovedb,utermstepssteps

@@ -67,6 +67,8 @@ def generate(formula_seeds_folder, partition_seeds_folder, random, conjuncts, nu
             partition_file = benchmark_folder / Path(f"{i:02d}"+".part")
             partition_file.write_text(partition)
 
+
+
             tlsf_file = benchmark_folder / Path(f"{i:02d}" + ".tlsf")
             if random:
                 tlsf_formula = to_tlsf(formula, inputs, outputs, "Random_Conjunction", str(i))
@@ -89,6 +91,27 @@ def generate(formula_seeds_folder, partition_seeds_folder, random, conjuncts, nu
                 tlsf_formula_env = to_tlsf(formula_env, inputs, outputs, "Conjunction", str(i))
 
             tlsf_file_env.write_text(tlsf_formula_env)
+
+
+            formula = Path(formula_file).read_text()
+            partition = Path(partition_file).read_text()
+            partition.strip("\n")
+            substr = partition.split("\n")
+            ins = substr[0].split(" ")[1:]
+            outs = substr[1].split(" ")[1:]
+            strix_ins = ""
+            for prop in ins:
+                strix_ins = strix_ins + prop + ","
+            strix_ins = strix_ins[:-1]
+            strix_outs = ""
+            for prop in outs:
+                strix_outs = strix_outs + prop + ","
+            strix_outs = strix_outs[:-1]
+            singularity_file = benchmark_folder / Path(f"{i:02d}"+"_strix.sh")
+            singularity_cmd = "time -p bin/strix -f \"" + formula + "\" --ins=" + strix_ins + " --outs=" + strix_outs
+            Path(singularity_file).write_text(singularity_cmd)
+
+
 
 
 

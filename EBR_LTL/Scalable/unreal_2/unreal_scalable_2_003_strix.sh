@@ -1,0 +1,1 @@
+time -p bin/strix -f "((((c) && ((X (u0)) || (X (u1)))) && (X ((X (u1)) || (X (u2))))) && (X (X ((X (u2)) || (X (u3))))))" --ins=u3,u2,u1,u0 --outs=c

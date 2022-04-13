@@ -32,6 +32,24 @@ def ebr_ltl_scalable(formula_seeds_folder, save):
         tlsf_formula = Path(original_formula_file).read_text()
         tlsf_file = save_str + "/" + file.parent.stem + "/" + file.stem + ".Xtlsf"
         Path(tlsf_file).write_text(tlsf_formula)
+
+        formula = Path(formula_file).read_text()
+        partition = Path(part_file).read_text()
+        partition.strip("\n")
+        substr = partition.split("\n")
+        ins = substr[0].split(" ")[1:]
+        outs = substr[1].split(" ")[1:]
+        strix_ins = ""
+        for prop in ins:
+            strix_ins = strix_ins + prop + ","
+        strix_ins = strix_ins[:-1]
+        strix_outs = ""
+        for prop in outs:
+            strix_outs = strix_outs + prop + ","
+        strix_outs = strix_outs[:-1]
+        singularity_file = save_str + "/" + file.parent.stem + "/" + file.stem + "_strix.sh"
+        singularity_cmd = "time -p bin/strix -f \""+ formula+"\" --ins="+strix_ins+" --outs="+strix_outs
+        Path(singularity_file).write_text(singularity_cmd)
         print(cmd)
         os.system(cmd)
 

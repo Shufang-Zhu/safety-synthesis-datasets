@@ -1,0 +1,1 @@
+time -p bin/strix -f "(G (((X(in_0)) <-> (out_1)) && ((X(in_1)) <-> (out_2)) && ((X(in_2)) <-> (out_3)) && ((X(in_3)) <-> (out_4)) && ((X(in_4)) <-> (out_5)) && ((X(in_5)) <-> (out_0))))" --ins=in_5,in_4,in_3,in_2,in_1,in_0 --outs=out_5,out_4,out_3,out_2,out_1,out_0

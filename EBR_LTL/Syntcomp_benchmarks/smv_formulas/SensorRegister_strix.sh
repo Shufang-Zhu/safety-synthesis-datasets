@@ -1,0 +1,1 @@
+time -p bin/strix -f "((G (!(((u0reg2val0reg2data) && (!(u0reg2val0reg2val))) <-> ((!(u0reg2val0reg2data)) && (u0reg2val0reg2val))))) && (G ((X(p0p0reg2cmp0f1dmy2type1b0reg2type)) <-> (u0reg2val0reg2data))))" --ins=p0p0reg2cmp0f1dmy2type1b0reg2type --outs=u0reg2val0reg2data,u0reg2val0reg2val

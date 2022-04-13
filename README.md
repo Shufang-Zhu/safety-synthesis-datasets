@@ -1,12 +1,11 @@
-## Generate Datasets
-### Basic setup
+# Dependencies
   1. Python3
      
   2. [Syfco](https://github.com/reactive-systems/syfco)
   
   3. Python package from [spot](https://spot.lrde.epita.fr/install.html)
 
-  4. Generate datasets
+## Generate datasets
   ```sh
   bash scripts/generate-all-datasets.sh
   ```

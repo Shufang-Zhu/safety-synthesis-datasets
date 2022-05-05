@@ -1,0 +1,1 @@
+time -p ./starexec_run_synth safety-synthesis-datasets/Conjunction/SSyft_1/case_01_50/28.Xtlsf /home/sz51/

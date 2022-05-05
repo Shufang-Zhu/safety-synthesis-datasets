@@ -22,6 +22,17 @@ def ebr_ltl_scalable(formula_seeds_folder, save):
         Path(tlsf_file).write_text(tlsf_formula)
         print(cmd)
         os.system(cmd)
+    files = list(formula_seeds_folder.glob("./*.conjtlsf"))
+    for file in files:
+        original_formula_file = formula_seeds_folder_str+"/"+file.name
+        formula_file = save_str+"/"+file.parent.stem+"/"+file.stem+".conjltl"
+        part_file = save_str+"/"+file.parent.stem+"/"+file.stem+".part"
+        cmd = "syfco -f ltl -m fully "+original_formula_file+" -o "+formula_file+" -pf "+part_file
+        tlsf_formula = Path(original_formula_file).read_text()
+        tlsf_file = save_str+"/"+file.parent.stem+"/"+file.stem+".conjtlsf"
+        Path(tlsf_file).write_text(tlsf_formula)
+        print(cmd)
+        os.system(cmd)
 
     files = list(formula_seeds_folder.glob("./*.Xtlsf"))
     for file in files:

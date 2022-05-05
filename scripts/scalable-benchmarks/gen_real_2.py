@@ -97,6 +97,55 @@ def tlsf_gen_real_2(k):
     print('}\n}\n', file=out)
     # end 'print GUARANTEE'
 
+def tlsf_gen_real_2_conj(k):
+    filename = 'Dataset_seeds/scalable-benchmarks/real_2/real_scalable_2_'+str('{0:03}'.format(k+1))+'.conjtlsf'
+    out = open(filename, 'w')
+    # 'print INFO'
+    print('INFO {', file=out)
+    print('TITLE:       \"Scalable Realizable Benchmark n.'+str(k)+ '\"', file=out)
+    print('DESCRIPTION: \"Scalable Realizable Benchmark n. for Ksy tool.\"', file=out)
+    print('SEMANTICS:   Mealy', file=out)
+    print('TARGET:      Mealy', file=out)
+    print('}', file=out)
+    # end 'print INFO'
+    print('MAIN {', file=out)
+    # 'print IN-OUT'
+    print('\nINPUTS { ', file=out)
+    for i in range(0,k+1):
+        print('u',str(i), end = '', sep="", file=out);
+        if(i<k):
+            print(';', file=out)
+        else:
+            print(';\n}', file=out)
+    print('\nOUTPUTS { ', file=out)
+    for i in range(0,k+1):
+        print('c',str(i), end = '', sep="", file=out);
+        if(i<k):
+            print(';', file=out)
+        else:
+            print(';\n}', file=out)
+    # end 'print IN-OUT'
+    # 'print GUARANTEE'
+    print('\nGUARANTEE { \n', file=out)
+    if(k<0):
+        print('*** The index must be >= 0.');
+        sys.exit()
+    for i in range(0,k+1):
+        for j in range(1,i+1):
+            c = 'G '
+            for m in range(1, j + 1):
+                c = c + 'X '
+            print(c, end = '', file=out)
+        print('G( c',str(i), ' || u',str(i),')', sep="", end="", file=out)
+        if(i==k):
+            print(' ', file=out);
+        else:
+            print(' && ', file=out);
+    # for i in range(0,k+1):
+    #     print(')', end = '', file=out)
+    print('}\n}\n', file=out)
+    # end 'print GUARANTEE'
+
 def smv_gen_real_2(k):
     filename = 'real_1_smv/real_scalable_2_'+str('{0:03}'.format(k+1))+'.smv'
     out = open(filename, 'w')
@@ -175,6 +224,7 @@ def main(argv):
             print('Generating file real_scalable_2_', str('{0:03}'.format(i+1)), '.tlsf',sep='')
             tlsf_gen_real_2(i);
             tlsf_gen_real_2_env(i);
+            tlsf_gen_real_2_conj(i);
         else:
             sys.exit()
 

@@ -1,0 +1,58 @@
+INFO {
+TITLE:       "Scalable Realizable Benchmark n.18"
+DESCRIPTION: "Scalable Realizable Benchmark n. for Ksy tool."
+SEMANTICS:   Mealy
+TARGET:      Mealy
+}
+MAIN {
+
+INPUTS{
+u;
+}
+
+OUTPUTS { 
+c0;
+c1;
+c2;
+c3;
+c4;
+c5;
+c6;
+c7;
+c8;
+c9;
+c10;
+c11;
+c12;
+c13;
+c14;
+c15;
+c16;
+c17;
+c18;
+}
+
+GUARANTEE { 
+
+G( c0 ) && 
+G X G( c1 ) && 
+G X G X X G( c2 ) && 
+G X G X X G X X X G( c3 ) && 
+G X G X X G X X X G X X X X G( c4 ) && 
+G X G X X G X X X G X X X X G X X X X X G( c5 ) && 
+G X G X X G X X X G X X X X G X X X X X G X X X X X X G( c6 ) && 
+G X G X X G X X X G X X X X G X X X X X G X X X X X X G X X X X X X X G( c7 ) && 
+G X G X X G X X X G X X X X G X X X X X G X X X X X X G X X X X X X X G X X X X X X X X G( c8 ) && 
+G X G X X G X X X G X X X X G X X X X X G X X X X X X G X X X X X X X G X X X X X X X X G X X X X X X X X X G( c9 ) && 
+G X G X X G X X X G X X X X G X X X X X G X X X X X X G X X X X X X X G X X X X X X X X G X X X X X X X X X G X X X X X X X X X X G( c10 ) && 
+G X G X X G X X X G X X X X G X X X X X G X X X X X X G X X X X X X X G X X X X X X X X G X X X X X X X X X G X X X X X X X X X X G X X X X X X X X X X X G( c11 ) && 
+G X G X X G X X X G X X X X G X X X X X G X X X X X X G X X X X X X X G X X X X X X X X G X X X X X X X X X G X X X X X X X X X X G X X X X X X X X X X X G X X X X X X X X X X X X G( c12 ) && 
+G X G X X G X X X G X X X X G X X X X X G X X X X X X G X X X X X X X G X X X X X X X X G X X X X X X X X X G X X X X X X X X X X G X X X X X X X X X X X G X X X X X X X X X X X X G X X X X X X X X X X X X X G( c13 ) && 
+G X G X X G X X X G X X X X G X X X X X G X X X X X X G X X X X X X X G X X X X X X X X G X X X X X X X X X G X X X X X X X X X X G X X X X X X X X X X X G X X X X X X X X X X X X G X X X X X X X X X X X X X G X X X X X X X X X X X X X X G( c14 ) && 
+G X G X X G X X X G X X X X G X X X X X G X X X X X X G X X X X X X X G X X X X X X X X G X X X X X X X X X G X X X X X X X X X X G X X X X X X X X X X X G X X X X X X X X X X X X G X X X X X X X X X X X X X G X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X G( c15 ) && 
+G X G X X G X X X G X X X X G X X X X X G X X X X X X G X X X X X X X G X X X X X X X X G X X X X X X X X X G X X X X X X X X X X G X X X X X X X X X X X G X X X X X X X X X X X X G X X X X X X X X X X X X X G X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X G( c16 ) && 
+G X G X X G X X X G X X X X G X X X X X G X X X X X X G X X X X X X X G X X X X X X X X G X X X X X X X X X G X X X X X X X X X X G X X X X X X X X X X X G X X X X X X X X X X X X G X X X X X X X X X X X X X G X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X G( c17 ) && 
+G X G X X G X X X G X X X X G X X X X X G X X X X X X G X X X X X X X G X X X X X X X X G X X X X X X X X X G X X X X X X X X X X G X X X X X X X X X X X G X X X X X X X X X X X X G X X X X X X X X X X X X X G X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X X G( c18 || u)
+}
+}
+

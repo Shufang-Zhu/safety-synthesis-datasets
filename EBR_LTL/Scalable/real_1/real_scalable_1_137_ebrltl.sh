@@ -1,0 +1,1 @@
+time -p ./starexec_run_synth safety-synthesis-datasets/EBR_LTL/Scalable/real_1/real_scalable_1_137.Xtlsf /home/sz51/

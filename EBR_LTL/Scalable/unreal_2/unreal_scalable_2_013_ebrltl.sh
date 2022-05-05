@@ -1,0 +1,1 @@
+time -p ./starexec_run_synth safety-synthesis-datasets/EBR_LTL/Scalable/unreal_2/unreal_scalable_2_013.Xtlsf /home/sz51/

@@ -1,0 +1,103 @@
+INFO {
+TITLE:       "Scalable Realizable Benchmark n.27"
+DESCRIPTION: "Scalable Realizable Benchmark n. for Ksy tool."
+SEMANTICS:   Mealy
+TARGET:      Mealy
+}
+MAIN {
+
+INPUTS { 
+u0;
+u1;
+u2;
+u3;
+u4;
+u5;
+u6;
+u7;
+u8;
+u9;
+u10;
+u11;
+u12;
+u13;
+u14;
+u15;
+u16;
+u17;
+u18;
+u19;
+u20;
+u21;
+u22;
+u23;
+u24;
+u25;
+u26;
+u27;
+}
+
+OUTPUTS { 
+c0;
+c1;
+c2;
+c3;
+c4;
+c5;
+c6;
+c7;
+c8;
+c9;
+c10;
+c11;
+c12;
+c13;
+c14;
+c15;
+c16;
+c17;
+c18;
+c19;
+c20;
+c21;
+c22;
+c23;
+c24;
+c25;
+c26;
+c27;
+}
+
+GUARANTEE { 
+
+G( c0 || u0) && 
+G X G( c1 || u1) && 
+G X G X X G( c2 || u2) && 
+G X G X X G X X X G( c3 || u3) && 
+G X G X X G X X X G X X X X G( c4 || u4) && 
+G X G X X G X X X G X X X X G X X X X X G( c5 || u5) && 
+G X G X X G X X X G X X X X G X X X X X G X X X X X X G( c6 || u6) && 
+G X G X X G X X X G X X X X G X X X X X G X X X X X X G X X X X X X X G( c7 || u7) && 
+G X G X X G X X X G X X X X G X X X X X G X X X X X X G X X X X X X X G X X X X X X X X G( c8 || u8) && 
+G X G X X G X X X G X X X X G X X X X X G X X X X X X G X X X X X X X G X X X X X X X X G X X X X X X X X X G( c9 || u9) && 
+G X G X X G X X X G X X X X G X X X X X G X X X X X X G X X X X X X X G X X X X X X X X G X X X X X X X X X G X X X X X X X X X X G( c10 || u10) && 
+G X G X X G X X X G X X X X G X X X X X G X X X X X X G X X X X X X X G X X X X X X X X G X X X X X X X X X G X X X X X X X X X X G X X X X X X X X X X X G( c11 || u11) && 
+G X G X X G X X X G X X X X G X X X X X G X X X X X X G X X X X X X X G X X X X X X X X G X X X X X X X X X G X X X X X X X X X X G X X X X X X X X X X X G X X X X X X X X X X X X G( c12 || u12) && 
+G X G X X G X X X G X X X X G X X X X X G X X X X X X G X X X X X X X G X X X X X X X X G X X X X X X X X X G X X X X X X X X X X G X X X X X X X X X X X G X X X X X X X X X X X X G X X X X X X X X X X X X X G( c13 || u13) && 
+G X G X X G X X X G X X X X G X X X X X G X X X X X X G X X X X X X X G X X X X X X X X G X X X X X X X X X G X X X X X X X X X X G X X X X X X X X X X X G X X X X X X X X X X X X G X X X X X X X X X X X X X G X X X X X X X X X X X X X X G( c14 || u14) && 
+G X G X X G X X X G X X X X G X X X X X G X X X X X X G X X X X X X X G X X X X X X X X G X X X X X X X X X G X X X X X X X X X X G X X X X X X X X X X X G X X X X X X X X X X X X G X X X X X X X X X X X X X G X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X G( c15 || u15) && 
+G X G X X G X X X G X X X X G X X X X X G X X X X X X G X X X X X X X G X X X X X X X X G X X X X X X X X X G X X X X X X X X X X G X X X X X X X X X X X G X X X X X X X X X X X X G X X X X X X X X X X X X X G X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X G( c16 || u16) && 
+G X G X X G X X X G X X X X G X X X X X G X X X X X X G X X X X X X X G X X X X X X X X G X X X X X X X X X G X X X X X X X X X X G X X X X X X X X X X X G X X X X X X X X X X X X G X X X X X X X X X X X X X G X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X G( c17 || u17) && 
+G X G X X G X X X G X X X X G X X X X X G X X X X X X G X X X X X X X G X X X X X X X X G X X X X X X X X X G X X X X X X X X X X G X X X X X X X X X X X G X X X X X X X X X X X X G X X X X X X X X X X X X X G X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X X G( c18 || u18) && 
+G X G X X G X X X G X X X X G X X X X X G X X X X X X G X X X X X X X G X X X X X X X X G X X X X X X X X X G X X X X X X X X X X G X X X X X X X X X X X G X X X X X X X X X X X X G X X X X X X X X X X X X X G X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X X X G( c19 || u19) && 
+G X G X X G X X X G X X X X G X X X X X G X X X X X X G X X X X X X X G X X X X X X X X G X X X X X X X X X G X X X X X X X X X X G X X X X X X X X X X X G X X X X X X X X X X X X G X X X X X X X X X X X X X G X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X X X X G( c20 || u20) && 
+G X G X X G X X X G X X X X G X X X X X G X X X X X X G X X X X X X X G X X X X X X X X G X X X X X X X X X G X X X X X X X X X X G X X X X X X X X X X X G X X X X X X X X X X X X G X X X X X X X X X X X X X G X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X X X X X G( c21 || u21) && 
+G X G X X G X X X G X X X X G X X X X X G X X X X X X G X X X X X X X G X X X X X X X X G X X X X X X X X X G X X X X X X X X X X G X X X X X X X X X X X G X X X X X X X X X X X X G X X X X X X X X X X X X X G X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X X X X X X G( c22 || u22) && 
+G X G X X G X X X G X X X X G X X X X X G X X X X X X G X X X X X X X G X X X X X X X X G X X X X X X X X X G X X X X X X X X X X G X X X X X X X X X X X G X X X X X X X X X X X X G X X X X X X X X X X X X X G X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X X X X X X X G( c23 || u23) && 
+G X G X X G X X X G X X X X G X X X X X G X X X X X X G X X X X X X X G X X X X X X X X G X X X X X X X X X G X X X X X X X X X X G X X X X X X X X X X X G X X X X X X X X X X X X G X X X X X X X X X X X X X G X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X X X X X X X X G( c24 || u24) && 
+G X G X X G X X X G X X X X G X X X X X G X X X X X X G X X X X X X X G X X X X X X X X G X X X X X X X X X G X X X X X X X X X X G X X X X X X X X X X X G X X X X X X X X X X X X G X X X X X X X X X X X X X G X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X X X X X X X X X G( c25 || u25) && 
+G X G X X G X X X G X X X X G X X X X X G X X X X X X G X X X X X X X G X X X X X X X X G X X X X X X X X X G X X X X X X X X X X G X X X X X X X X X X X G X X X X X X X X X X X X G X X X X X X X X X X X X X G X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X X X X X X X X X X G( c26 || u26) && 
+G X G X X G X X X G X X X X G X X X X X G X X X X X X G X X X X X X X G X X X X X X X X G X X X X X X X X X G X X X X X X X X X X G X X X X X X X X X X X G X X X X X X X X X X X X G X X X X X X X X X X X X X G X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X X X X X X X X X X G X X X X X X X X X X X X X X X X X X X X X X X X X X X G( c27 || u27) 
+}
+}
+
